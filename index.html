@@ -342,7 +342,7 @@
     <button class="launch-snackbar">Launch Snackbar</button>
     <!-- End of snackbar -->
 
-    <!-- Start of range slider -->
+    <!-- Start of discrete range slider -->
     <div class="mdc-slider mdc-slider--range mdc-slider--discrete">
       <input
         class="mdc-slider__input"
@@ -391,7 +391,42 @@
         <div class="mdc-slider__thumb-knob"></div>
       </div>
     </div>
-    <!-- End of range slider -->
+    <!-- End of discrete range slider -->
+
+    <!-- Start of Continuous range slider -->
+    <div class="mdc-slider mdc-slider--range">
+      <input
+        class="mdc-slider__input"
+        type="range"
+        min="0"
+        max="70"
+        value="30"
+        name="rangeStart"
+        aria-label="Continuous range slider demo"
+      />
+      <input
+        class="mdc-slider__input"
+        type="range"
+        min="30"
+        max="100"
+        value="70"
+        name="rangeEnd"
+        aria-label="Continuous range slider demo"
+      />
+      <div class="mdc-slider__track">
+        <div class="mdc-slider__track--inactive"></div>
+        <div class="mdc-slider__track--active">
+          <div class="mdc-slider__track--active_fill"></div>
+        </div>
+      </div>
+      <div class="mdc-slider__thumb">
+        <div class="mdc-slider__thumb-knob"></div>
+      </div>
+      <div class="mdc-slider__thumb">
+        <div class="mdc-slider__thumb-knob"></div>
+      </div>
+    </div>
+    <!-- End of Continuous range slider -->
   </body>
 </html>
 <script>
@@ -439,7 +474,7 @@
    * Pag marami naman gagamitin, etong nasa baba
    */
   let elements = document.getElementsByClassName('mdc-slider');
-  [ ...elements ].map((e) => {
+  [...elements].map((e) => {
     new mdc.slider.MDCSlider(e);
   });
 </script>
