@@ -430,5 +430,16 @@
       snackbar.open();
     });
 
-  new mdc.slider.MDCSlider(document.querySelector('.mdc-slider'));
+  /*
+   * Pag isa lang mdc component lang gagamitin, etong nasa baba
+   */
+  // new mdc.slider.MDCSlider(document.querySelector('.mdc-slider'));
+
+  /*
+   * Pag marami naman gagamitin, etong nasa baba
+   */
+  let elements = document.getElementsByClassName('mdc-slider');
+  [ ...elements ].map((e) => {
+    new mdc.slider.MDCSlider(e);
+  });
 </script>
