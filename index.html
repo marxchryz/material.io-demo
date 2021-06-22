@@ -247,7 +247,7 @@
     <!-- End of Dialog -->
 
     <!-- Start of chips -->
-    <div class="mdc-chip-set mdc-chip-set--filter" role="grid">
+    <div class="mdc-chip-set mdc-chip-set--filter" role="grid" id="chipset1">
       <div class="mdc-chip" role="row">
         <div class="mdc-chip__ripple"></div>
         <span class="mdc-chip__checkmark">
@@ -452,12 +452,20 @@
     });
 
   // For the chips
-  new mdc.chips.MDCChipSet(document.querySelector('.mdc-chip-set'));
+  max = 2;
+  chipset1 = new mdc.chips.MDCChipSet(document.querySelector('.mdc-chip-set'));
+  elements = document.querySelectorAll('#chipset1 .mdc-chip');
+  [...elements].map((e) => {
+    e.addEventListener('click', function () {
+      if (chipset1.chips.filter((chip) => chip.selected).length > max)
+        this.classList.remove('mdc-chip--selected');
+    });
+  });
+
+  // For the Snackbar
   snackbar = new mdc.snackbar.MDCSnackbar(
     document.querySelector('.mdc-snackbar')
   );
-
-  // For the Snackbar
   document
     .querySelector('.launch-snackbar')
     .addEventListener('click', function (evt) {
@@ -473,7 +481,7 @@
   /*
    * Pag marami naman gagamitin, etong nasa baba
    */
-  let elements = document.getElementsByClassName('mdc-slider');
+  elements = document.getElementsByClassName('mdc-slider');
   [...elements].map((e) => {
     new mdc.slider.MDCSlider(e);
   });
