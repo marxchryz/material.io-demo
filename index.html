@@ -41,6 +41,13 @@
       .mdc-switch {
         --mdc-theme-secondary: red;
       }
+
+      /*
+       * Change color ng slider
+       */
+      .mdc-slider {
+        --mdc-theme-primary: red;
+      }
     </style>
   </head>
 
@@ -308,7 +315,7 @@
         </span>
       </div>
     </div>
-    <hr>
+    <hr />
     <!-- End of chips -->
 
     <!-- Start if snackbar -->
@@ -331,6 +338,57 @@
     </div>
     <button class="launch-snackbar">Launch Snackbar</button>
     <!-- End of snackbar -->
+
+    <!-- Start of range slider -->
+    <div class="mdc-slider mdc-slider--range mdc-slider--discrete">
+      <input
+        class="mdc-slider__input"
+        type="range"
+        min="18"
+        max="50"
+        value="20"
+        step="1"
+        name="rangeStart"
+        aria-label="Discrete range slider demo"
+      />
+      <input
+        class="mdc-slider__input"
+        type="range"
+        min="18"
+        max="50"
+        value="26"
+        step="1"
+        name="rangeEnd"
+        aria-label="Discrete range slider demo"
+      />
+      <div class="mdc-slider__track">
+        <div class="mdc-slider__track--inactive"></div>
+        <div class="mdc-slider__track--active">
+          <div class="mdc-slider__track--active_fill"></div>
+        </div>
+      </div>
+      <div class="mdc-slider__thumb">
+        <div class="mdc-slider__value-indicator-container" aria-hidden="true">
+          <div class="mdc-slider__value-indicator">
+            <span class="mdc-slider__value-indicator-text">
+              20
+            </span>
+          </div>
+        </div>
+        <div class="mdc-slider__thumb-knob"></div>
+      </div>
+      <div class="mdc-slider__thumb">
+        <div class="mdc-slider__value-indicator-container" aria-hidden="true">
+          <div class="mdc-slider__value-indicator">
+            <span class="mdc-slider__value-indicator-text">
+              50
+            </span>
+          </div>
+        </div>
+        <div class="mdc-slider__thumb-knob"></div>
+      </div>
+    </div>
+    <!-- End of range slider -->
   </body>
 </html>
 <script>
@@ -368,4 +426,6 @@
       event.preventDefault(evt);
       snackbar.open();
     });
+
+  new mdc.slider.MDCSlider(document.querySelector('.mdc-slider'));
 </script>
