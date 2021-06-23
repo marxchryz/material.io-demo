@@ -51,6 +51,15 @@
       .mdc-slider__track--active {
         background-color: black;
       }
+
+      /* para sa navbar */
+      .mdc-tab-bar {
+        --mdc-theme-primary: #ff6e83;
+      }
+      .mdc-tab--active img {
+        filter: invert(61%) sepia(29%) saturate(3367%) hue-rotate(311deg)
+          brightness(103%) contrast(101%);
+      }
     </style>
   </head>
 
@@ -247,7 +256,7 @@
     <!-- End of Dialog -->
 
     <!-- Start of chips -->
-    <div class="mdc-chip-set mdc-chip-set--filter" role="grid" id="chipset1">
+    <div class="mdc-chip-set mdc-chip-set--filter" role="grid">
       <div class="mdc-chip" role="row">
         <div class="mdc-chip__ripple"></div>
         <span class="mdc-chip__checkmark">
@@ -427,6 +436,87 @@
       </div>
     </div>
     <!-- End of Continuous range slider -->
+
+    <div
+      class="mdc-tab-bar"
+      role="tablist"
+      style="position: absolute; bottom: 0; left: 0;"
+    >
+      <div class="mdc-tab-scroller">
+        <div class="mdc-tab-scroller__scroll-area" style="overflow-y: hidden;">
+          <div class="mdc-tab-scroller__scroll-content">
+            <button
+              class="mdc-tab mdc-tab--active"
+              role="tab"
+              aria-selected="true"
+              tabindex="0"
+            >
+              <span class="mdc-tab__content">
+                <span class="" aria-hidden="true"
+                  ><img src="./match-icon.png" alt=""
+                /></span>
+              </span>
+              <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                <span
+                  class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
+                ></span>
+              </span>
+            </button>
+            <button
+              class="mdc-tab"
+              role="tab"
+              aria-selected="true"
+              tabindex="0"
+            >
+              <span class="mdc-tab__content">
+                <span class="" aria-hidden="true"
+                  ><img src="./chat-icon.png" alt=""
+                /></span>
+              </span>
+              <span class="mdc-tab-indicator">
+                <span
+                  class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
+                ></span>
+              </span>
+            </button>
+            <button
+              class="mdc-tab"
+              role="tab"
+              aria-selected="true"
+              tabindex="0"
+            >
+              <span class="mdc-tab__content">
+                <span class="" aria-hidden="true"
+                  ><img src="./profile-icon.png" alt=""
+                /></span>
+              </span>
+              <span class="mdc-tab-indicator">
+                <span
+                  class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
+                ></span>
+              </span>
+            </button>
+            <button
+              class="mdc-tab"
+              role="tab"
+              aria-selected="true"
+              tabindex="0"
+            >
+              <span class="mdc-tab__content">
+                <span class="" aria-hidden="true"
+                  ><img src="./settings-icon.png" alt=""
+                /></span>
+              </span>
+              <span class="mdc-tab-indicator">
+                <span
+                  class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"
+                ></span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
 <script>
@@ -485,4 +575,6 @@
   [...elements].map((e) => {
     new mdc.slider.MDCSlider(e);
   });
+
+  new mdc.tabBar.MDCTabBar(document.querySelector('.mdc-tab-bar'));
 </script>
