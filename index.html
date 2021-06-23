@@ -60,6 +60,10 @@
         filter: invert(61%) sepia(29%) saturate(3367%) hue-rotate(311deg)
           brightness(103%) contrast(101%);
       }
+
+      .mdc-ripple-upgraded--background-focused, .mdc-text-field {
+        background-color: white !important;
+      }
     </style>
   </head>
 
@@ -80,11 +84,15 @@
     <!--   /> -->
     <!-- </label> -->
     <label class="mdc-text-field mdc-text-field--filled">
-  <span class="mdc-text-field__ripple"></span>
-  <span class="mdc-floating-label" id="my-label-id">Hint text</span>
-  <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id">
-  <span class="mdc-line-ripple"></span>
-</label>
+      <span class="mdc-text-field__ripple"></span>
+      <span class="mdc-floating-label" id="my-label-id">Hint text</span>
+      <input
+        class="mdc-text-field__input"
+        type="text"
+        aria-labelledby="my-label-id"
+      />
+      <span class="mdc-line-ripple"></span>
+    </label>
     <hr />
     <!-- End of textfield -->
 
